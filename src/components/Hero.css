@@ -1,0 +1,133 @@
+.hero {
+  position: relative;
+  height: 85vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 4%;
+  padding-bottom: 180px;
+  padding-top: 68px;
+}
+
+.hero--loading {
+  background: linear-gradient(to bottom, #2a2a2a, #141414);
+}
+
+.hero__content {
+  max-width: 600px;
+  z-index: 10;
+}
+
+.hero__title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.hero__meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #a3a3a3;
+}
+
+.hero__rating {
+  color: #46d369;
+  font-weight: 600;
+}
+
+.hero__description {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #d2d2d2;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.hero__button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hero__button--play {
+  background-color: #fff;
+  color: #000;
+}
+
+.hero__button--play:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.hero__button--info {
+  background-color: rgba(109, 109, 110, 0.7);
+  color: #fff;
+}
+
+.hero__button--info:hover {
+  background-color: rgba(109, 109, 110, 0.4);
+}
+
+.hero__button-icon {
+  font-size: 18px;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+    min-height: 400px;
+    padding-bottom: 80px;
+  }
+  
+  .hero__title {
+    font-size: 32px;
+  }
+  
+  .hero__description {
+    font-size: 14px;
+    -webkit-line-clamp: 2;
+  }
+  
+  .hero__button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

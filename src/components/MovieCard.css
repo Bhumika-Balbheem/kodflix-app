@@ -1,0 +1,138 @@
+.movie-card {
+  flex: 0 0 auto;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.movie-card__image-container {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  transform-origin: center center;
+}
+
+.movie-card__image-container--hovered {
+  transform: scale(1.35);
+  z-index: 100;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+}
+
+.movie-card__image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.movie-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
+  padding: 60px 12px 12px;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.movie-card__actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.movie-card__action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.movie-card__action-btn:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.movie-card__action-btn--play {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.movie-card__action-btn--play:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.movie-card__info {
+  color: #fff;
+}
+
+.movie-card__title {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-card__meta {
+  display: flex;
+  gap: 8px;
+  font-size: 10px;
+  color: #b3b3b3;
+  margin-bottom: 6px;
+}
+
+.movie-card__rating {
+  color: #46d369;
+  font-weight: 600;
+}
+
+.movie-card__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.movie-card__genre {
+  font-size: 9px;
+  color: #b3b3b3;
+}
+
+.movie-card__genre:not(:last-child)::after {
+  content: '•';
+  margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    width: 150px;
+  }
+  
+  .movie-card__image {
+    height: 225px;
+  }
+  
+  .movie-card__image-container--hovered {
+    transform: scale(1.2);
+  }
+}
